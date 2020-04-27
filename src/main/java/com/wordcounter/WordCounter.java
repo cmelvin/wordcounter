@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class WordCounter {
 
     private int noFuncThreadPoolSize;
-    private List<String> wordList = new ArrayList<String>();
+    private List<String> wordList = new ArrayList<>();
     private Translator translator = new Translator();
 
     public WordCounter(int noFuncThreadPoolSize) {

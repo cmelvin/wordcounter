@@ -64,9 +64,4 @@ public class WordCounterTest {
         assertEquals(1, wordCounter.getCount("Fire"));
     }
 
-    @Test(expected = NullPointerException.class)
-    public void whenCounterIsNull() throws WordCounterException {
-        wordCounter = null;
-        assertEquals(3, wordCounter.getCount("Flor"));
-    }
 }
