@@ -5,27 +5,28 @@ import com.translator.Translator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 
 public class WordCounter {
 
     List<String> wordList = new ArrayList<String>();
+    Translator translator = new Translator();
 
     public void add(String word) {
 
-            wordList.add(word);
+        wordList.add(word);
 
     }
 
-    public int getCount(String word){
+    public int getCount(String word) {
         Map<String, Long> wordMap;
+        String finalWord;
+        finalWord = translator.translate(word);
 
-        Translator translator = new Translator();
 
         wordMap = wordList.parallelStream().map(x -> translator.translate(x)).parallel()
                 .filter(x -> x.equalsIgnoreCase(word)).collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-        return wordMap.get(word).intValue();
+        return wordMap.get(finalWord.toLowerCase()).intValue();
 
 
     }
