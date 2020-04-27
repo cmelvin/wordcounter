@@ -7,8 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class WordCounterTest {
 
-    WordCounter wordCounter = new WordCounter();
-
+    WordCounter wordCounter = new WordCounter(4);
 
     @Before
     public void setup() throws WordCounterException {
@@ -26,7 +25,6 @@ public class WordCounterTest {
         wordCounter.add("Animal");
         wordCounter.add("Song");
     }
-
 
     @Test
     public void totalCountOfWeCounterList(){
@@ -56,7 +54,7 @@ public class WordCounterTest {
 
     @Test(expected = WordCounterException.class)
     public void whenCounterHasNoData() throws WordCounterException {
-        wordCounter=new WordCounter();
+        wordCounter=new WordCounter(4);
         assertEquals(3, wordCounter.getCount("Flor"));
     }
 
@@ -71,5 +69,4 @@ public class WordCounterTest {
         wordCounter = null;
         assertEquals(3, wordCounter.getCount("Flor"));
     }
-
 }
