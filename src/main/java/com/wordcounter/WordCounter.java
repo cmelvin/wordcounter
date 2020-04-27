@@ -18,15 +18,19 @@ public class WordCounter {
 
     }
 
-    public int getCount(String word) {
+    public int getCount(String word) throws WordCounterException {
         Map<String, Long> wordMap;
         String finalWord;
+        try{
         finalWord = translator.translate(word);
 
 
         wordMap = wordList.parallelStream().map(x -> translator.translate(x)).parallel()
                 .filter(x -> x.equalsIgnoreCase(finalWord)).collect(Collectors.groupingBy(e -> e, Collectors.counting()));
         return wordMap.get(finalWord.toLowerCase()).intValue();
+        } catch (Exception e) {
+            throw new WordCounterException(e.getMessage(), e.getCause());
+        }
 
 
     }

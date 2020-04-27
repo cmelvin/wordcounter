@@ -34,22 +34,22 @@ public class WordCounterTest {
     }
 
     @Test
-    public void whenWordCountForSingleWord(){
+    public void whenWordCountForSingleWord() throws WordCounterException {
         assertEquals(1, wordCounter.getCount("Song"));
     }
 
     @Test
-    public void whenWordCountForMultipleWords() {
+    public void whenWordCountForMultipleWords() throws WordCounterException {
         assertEquals(3, wordCounter.getCount("Flower"));
     }
 
     @Test
-    public void whenWordCountForSingleForeignWords()  {
+    public void whenWordCountForSingleForeignWords() throws WordCounterException {
         assertEquals(1, wordCounter.getCount("Vineto"));
     }
 
     @Test
-    public void whenWordCountForMultipleForeignWords()  {
+    public void whenWordCountForMultipleForeignWords() throws WordCounterException {
         assertEquals(3, wordCounter.getCount("Flor"));
     }
 
