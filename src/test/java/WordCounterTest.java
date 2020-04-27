@@ -70,4 +70,12 @@ public class WordCounterTest {
         assertEquals(13,wordCounter.getSize());
     }
 
+    @Test
+    public void whenCounterAddAMillion() throws WordCounterException {
+        for(int i=0; i<=1000000; i++){
+            wordCounter.add("Moon");
+        }
+        assertEquals(1000001, wordCounter.getCount("Moon"));
+    }
+
 }
