@@ -30,4 +30,9 @@ public class WordCounterTest {
     public void totalCountOfWeCounterList(){
         assertEquals(13,wordCounter.wordList.size());
     }
+
+    @Test
+    public void whenWordCountForSingleWord(){
+        assertEquals(1, wordCounter.getCount("Song"));
+    }
 }
