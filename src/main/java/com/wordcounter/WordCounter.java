@@ -25,7 +25,7 @@ public class WordCounter {
 
 
         wordMap = wordList.parallelStream().map(x -> translator.translate(x)).parallel()
-                .filter(x -> x.equalsIgnoreCase(word)).collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+                .filter(x -> x.equalsIgnoreCase(finalWord)).collect(Collectors.groupingBy(e -> e, Collectors.counting()));
         return wordMap.get(finalWord.toLowerCase()).intValue();
 
 

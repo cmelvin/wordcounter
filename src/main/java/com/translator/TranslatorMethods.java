@@ -9,6 +9,10 @@ public class TranslatorMethods {
                 || input.equalsIgnoreCase("blume"))
             return "flower";
 
+        if (input.equalsIgnoreCase("wind")||
+                input.equalsIgnoreCase("vineto"))
+            return "wind";
+
         return input.toLowerCase();
     }
 }

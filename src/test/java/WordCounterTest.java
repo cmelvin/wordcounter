@@ -1,4 +1,5 @@
 import com.wordcounter.WordCounter;
+import com.wordcounter.WordCounterException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,5 +53,11 @@ public class WordCounterTest {
         assertEquals(3, wordCounter.getCount("Flor"));
     }
 
+
+    @Test(expected = WordCounterException.class)
+    public void whenCounterHasNoData() throws WordCounterException {
+        wordCounter=new WordCounter();
+        assertEquals(3, wordCounter.getCount("Flor"));
+    }
 
 }
