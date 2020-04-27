@@ -1,3 +1,4 @@
+import com.wordcounter.WordCounter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,7 +29,7 @@ public class WordCounterTest {
 
     @Test
     public void totalCountOfWeCounterList(){
-        assertEquals(13,wordCounter.wordList.size());
+        assertEquals(13,wordCounter.getSize());
     }
 
     @Test

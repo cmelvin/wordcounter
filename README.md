@@ -1,2 +1,2 @@
 # wordcounter
-WordCounter
+com.wordcounter.WordCounter
