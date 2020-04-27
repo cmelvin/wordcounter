@@ -60,4 +60,10 @@ public class WordCounterTest {
         assertEquals(3, wordCounter.getCount("Flor"));
     }
 
+    @Test(expected = WordCounterException.class)
+    public void whenCounterHasNonAlphabetData() throws WordCounterException {
+        wordCounter.add("^&%%^");
+        assertEquals(1, wordCounter.getCount("Fire"));
+    }
+
 }
