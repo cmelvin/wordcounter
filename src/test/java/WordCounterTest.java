@@ -36,4 +36,21 @@ public class WordCounterTest {
     public void whenWordCountForSingleWord(){
         assertEquals(1, wordCounter.getCount("Song"));
     }
+
+    @Test
+    public void whenWordCountForMultipleWords() {
+        assertEquals(3, wordCounter.getCount("Flower"));
+    }
+
+    @Test
+    public void whenWordCountForSingleForeignWords()  {
+        assertEquals(1, wordCounter.getCount("Vineto"));
+    }
+
+    @Test
+    public void whenWordCountForMultipleForeignWords()  {
+        assertEquals(3, wordCounter.getCount("Flor"));
+    }
+
+
 }
