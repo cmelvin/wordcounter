@@ -11,7 +11,7 @@ public class WordCounterTest {
 
 
     @Before
-    public void setup()  {
+    public void setup() throws WordCounterException {
         wordCounter.add("Sky");
         wordCounter.add("Earth");
         wordCounter.add("Flower");

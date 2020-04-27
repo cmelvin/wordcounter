@@ -1,6 +1,7 @@
 package com.wordcounter;
 
 import com.translator.Translator;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,12 @@ public class WordCounter {
     List<String> wordList = new ArrayList<String>();
     Translator translator = new Translator();
 
-    public void add(String word) {
-
-        wordList.add(word);
+    public void add(String word) throws WordCounterException {
+        if (StringUtils.isAlpha(word)){
+            wordList.add(word);
+        } else{
+            throw new WordCounterException("Not Alphabet");
+        }
 
     }
 
