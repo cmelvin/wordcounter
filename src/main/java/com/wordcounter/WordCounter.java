@@ -20,7 +20,7 @@ public class WordCounter {
     }
 
     public void add(String word) throws WordCounterException {
-        if (StringUtils.isAlpha(word)) {
+        if (StringUtils.isAlpha(word) && StringUtils.isNotEmpty(word)) {
             wordList.add(word);
         } else {
             throw new WordCounterException("Not Alphabet");

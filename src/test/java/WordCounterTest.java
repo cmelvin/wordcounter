@@ -61,7 +61,13 @@ public class WordCounterTest {
     @Test(expected = WordCounterException.class)
     public void whenCounterHasNonAlphabetData() throws WordCounterException {
         wordCounter.add("^&%%^");
-        assertEquals(1, wordCounter.getCount("Fire"));
+        assertEquals(13,wordCounter.getSize());
+    }
+
+    @Test(expected = WordCounterException.class)
+    public void whenCounterAddNull() throws WordCounterException {
+        wordCounter.add(null);
+        assertEquals(13,wordCounter.getSize());
     }
 
 }
