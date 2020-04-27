@@ -18,12 +18,15 @@ public class WordCounter {
 
     }
 
-    public int getCount(String input){
+    public int getCount(String word){
         Map<String, Long> wordMap;
 
         Translator translator = new Translator();
 
-            return 1;
+        wordMap = wordList.parallelStream().map(x -> translator.translate(x)).parallel()
+                .filter(x -> x.equalsIgnoreCase(word)).collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+        return wordMap.get(word).intValue();
+
 
     }
 
