@@ -10,12 +10,10 @@ import java.util.stream.Collectors;
 
 public class WordCounter {
 
-    private int noFuncThreadPoolSize;
     private List<String> wordList = new ArrayList<>();
     private TranslatorMethods translatorMethods = new TranslatorMethods();
 
-    public WordCounter(int noFuncThreadPoolSize) {
-        this.noFuncThreadPoolSize = noFuncThreadPoolSize;
+    public WordCounter() {
     }
 
     public void add(String word) throws WordCounterException {

@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class WordCounterTest {
 
-    WordCounter wordCounter = new WordCounter(4);
+    WordCounter wordCounter = new WordCounter();
 
     @Before
     public void setup() throws WordCounterException {
@@ -27,8 +27,8 @@ public class WordCounterTest {
     }
 
     @Test
-    public void totalCountOfWeCounterList(){
-        assertEquals(13,wordCounter.getSize());
+    public void totalCountOfWeCounterList() {
+        assertEquals(13, wordCounter.getSize());
     }
 
     @Test
@@ -54,25 +54,25 @@ public class WordCounterTest {
 
     @Test(expected = WordCounterException.class)
     public void whenCounterHasNoData() throws WordCounterException {
-        wordCounter=new WordCounter(4);
+        wordCounter = new WordCounter();
         assertEquals(3, wordCounter.getCount("Flor"));
     }
 
     @Test(expected = WordCounterException.class)
     public void whenCounterHasNonAlphabetData() throws WordCounterException {
         wordCounter.add("^&%%^");
-        assertEquals(13,wordCounter.getSize());
+        assertEquals(13, wordCounter.getSize());
     }
 
     @Test(expected = WordCounterException.class)
     public void whenCounterAddNull() throws WordCounterException {
         wordCounter.add(null);
-        assertEquals(13,wordCounter.getSize());
+        assertEquals(13, wordCounter.getSize());
     }
 
     @Test
     public void whenCounterAddAMillion() throws WordCounterException {
-        for(int i=0; i<=1000000; i++){
+        for (int i = 0; i <= 1000000; i++) {
             wordCounter.add("Moon");
         }
         assertEquals(1000001, wordCounter.getCount("Moon"));
