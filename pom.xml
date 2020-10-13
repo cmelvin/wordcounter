@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <candidateName>Melvin.Cephas</candidateName>
-        <junit.runner>4.12</junit.runner>
+        <junit.runner>4.13.1</junit.runner>
         <commons.version>3.9</commons.version>
     </properties>
 
